@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="my.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="nav-left">
+        <i class="fa fa-bars" id="menu-btn"></i>
+        <a href="#" class="logo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg"
+            alt="YouTube Logo"
+            class="youtube-logo"
+          />
+        </a>
+      </div>
+      <div class="nav-center">
+        <input type="text" placeholder="Search" id="search-input" />
+        <button id="search-btn"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="nav-right">
+        <i class="fa fa-mic"></i>
+        <i class="fa fa-bell"></i>
+        <img src="/logo.jpg" alt="avatar" class="avatar" />
+      </div>
+    </nav>
+
+    <div class="category-bar">
+      <button class="category active">All</button>
+      <button class="category">Korean dramas</button>
+      <button class="category">Chinese television dramas</button>
+      <button class="category">Martial Arts Movies</button>
+      <button class="category">Podcasts</button>
+      <button class="category">Nollywood</button>
+      <button class="category">News</button>
+      <button class="category">Mixes</button>
+      <button class="category">Music</button>
+      <button class="category">Film criticisms</button>
+      <button class="category">Live</button>
+      <button class="category">Dua</button>
+      <button class="category">Sketch Comedy</button>
+      <button class="category">Sheikh</button>
+      <button class="category">Recently Uploaded</button>
+      <button class="category">Watched</button>
+      <button class="category">New to you</button>
+    </div>
+
+    <div class="container">
+      <aside class="sidebar" id="sidebar">
+        <a href="#"><i class="fa fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-fire"></i> Trending</a>
+        <hr />
+        <a href="#"><i class="fa fa-subscript"></i> Subscriptions</a>
+        <hr />
+        <a href="#"><i class="fa fa-history"></i> History</a>
+        <a href="#"><i class="fa fa-clock"></i> Watch Later</a>
+        <a href="#"><i class="fa fa-thumbs-up"></i> Liked Videos</a>
+        <a href="#"><i class="fa fa-download"></i>Download</a>
+        <a href="#"><i class="fa fa-short"></i></a>
+      </aside>
+
+      <main class="feed" id="video-feed"></main>
+    </div>
+
+    <script src="my.js"></script>
+  </body>
+</html>

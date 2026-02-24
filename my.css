@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #121212;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  .nav-center {
+    display: none; /* Hide search on small screens */
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 60px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .feed {
+    margin-left: 0;
+  }
+}
+
+.category-bar {
+  display: flex;
+  gap: 12px;
+  padding: 12px 20px;
+  overflow-x: auto;
+  background: #121212;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.category {
+  background: #272727;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.category:hover {
+  background: #3d3d3d;
+}
+
+.category.active {
+  background: #fff;
+  color: #000;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  color: #ff0000;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.youtube-logo {
+  width: 110px;
+}
+
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-center input {
+  width: 400px;
+  padding: 8px 14px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #444;
+  background: #121212;
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+.nav-center button {
+  padding: 8px 16px;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 34px;
+  border-radius: 50%;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #0f0f0f;
+  height: 110vh;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.hide {
+  transform: translateX(-100%);
+}
+
+.sidebar a {
+  color: #ddd;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.95rem;
+}
+
+.sidebar a:hover {
+  background: #333;
+}
+
+.sidebar hr {
+  border-color: #444;
+  margin: 10px 0;
+}
+
+.sidebar.hidden {
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* VIDEO FEED */
+.feed {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  align-content: start;
+}
+
+/* VIDEO CARD */
+.card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-info {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+
+.card-info .channel-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card-details h4 {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.card-details p {
+  font-size: 0.78rem;
+  color: #aaa;
+}
+
+/* SEARCH HIGHLIGHT */
+.card.hidden {
+  display: none;
+}
+
+.video-card {
+  width: 320px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-info {
+  display: flex;
+  margin-top: 10px;
+}
+
+.video-info .avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
