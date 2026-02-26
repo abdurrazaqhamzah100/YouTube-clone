@@ -15,7 +15,7 @@ img {
   height: auto;
 }
 
-/* NAVBAR */
+
 .navbar {
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@ img {
 .nav-left {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 17px;
 }
 
 .logo {
@@ -100,7 +100,7 @@ img {
 }
 
 .youtube-logo {
-  width: 110px;
+  width: 113px;
 }
 
 .nav-center {
@@ -121,13 +121,15 @@ img {
 }
 
 .nav-center button {
-  padding: 8px 16px;
+  padding: 10px 17px;
   border-radius: 0 20px 20px 0;
   border: 1px solid #444;
   background: #333;
   color: #fff;
   cursor: pointer;
 }
+
+
 
 .nav-right {
   display: flex;
@@ -142,12 +144,12 @@ img {
   border-radius: 50%;
 }
 
-/* LAYOUT */
+
 .container {
   display: flex;
 }
 
-/* SIDEBAR */
+
 .sidebar {
   width: 220px;
   background: #0f0f0f;
@@ -193,7 +195,7 @@ img {
   padding: 0;
 }
 
-/* VIDEO FEED */
+
 .feed {
   flex: 1;
   padding: 20px;
@@ -201,20 +203,49 @@ img {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
   align-content: start;
+  justify-content: space-between;
+  cursor: pointer;
+  perspective: 1000px;
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
 }
 
-/* VIDEO CARD */
+.feed.expand {
+  margin-left: 0;
+}
+
+.feed .card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.feed .card:hover {
+  transform: translateY(-12px) rotate(3deg) scale(1.02);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6),
+    0 0 25px rgba(255,255,255,0.05);
+}
+
+.feed .card img {
+  transition: transform 2.4s ease;
+}
+
+.feed .card:hover img {
+  transform: scale(1.07);
+}
+
+
+
+
 .card {
   background: #1a1a1a;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s;
+  width: 100%;
 }
 
-.card:hover {
-  transform: scale(1.03);
-}
 
 .card img {
   width: 100%;
@@ -250,11 +281,6 @@ img {
   display: none;
 }
 
-.video-card {
-  width: 320px;
-  margin: 15px;
-  cursor: pointer;
-}
 
 .thumbnail {
   width: 100%;
@@ -269,11 +295,8 @@ img {
 .video-info .avatar {
   border-radius: 50%;
   margin-right: 10px;
+  width: 50px;
+  height: 50px;
 }
 
-.feed {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
+

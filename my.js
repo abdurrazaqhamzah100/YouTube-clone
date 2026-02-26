@@ -1,13 +1,12 @@
 const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.getElementById("sidebar");
+const feed = document.getElementById("video-feed");
 
-menuBtn.addEventListener("click", function () {
+menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("hide");
+  feed.classList.toggle("expand");
 });
 
-menuBtn.addEventListener("click", function () {
-  sidebar.classList.toggle("show");
-});
 
 const videos = [
   {
@@ -74,6 +73,38 @@ const videos = [
     thumbnail: "https://picsum.photos/seed/react/320/180",
     avatar: "https://i.pravatar.cc/36?img=8",
   },
+  {
+    title: "Cyber Security Crash course",
+    channel: "DevHamz",
+    views: "10.1M views",
+    time: "11 year ago",
+    thumbnail: "https://picsum.photos/seed/hacker/320/180",
+    avatar: "https://i.pravatar.cc/36?img=0.5",
+  },
+  {
+    title: "SQL Crash course",
+    channel: "Hamraz",
+    views: "156.1M views",
+    time: " 11 months ago",
+    thumbnail: "https://picsum.photos/seed/sql/320/187",
+    avatar: "https://i.pravatar.cc/36?img=1.4",
+  },
+  {
+    title: "JQUERY Crash course",
+    channel: "DevHamz",
+    views: "77.1M views",
+    time: "21 weeks ago",
+    thumbnail: "https://picsum.photos/seed/jquery/320/180",
+    avatar: "https://i.pravatar.cc/36?img=0.3",
+  },
+  {
+    title: "BOOTSTRAP Crash course",
+    channel: "Saghedev",
+    views: "88.8M views",
+    time: "5 year ago",
+    thumbnail: "https://picsum.photos/seed/bootstrap/320/180",
+    avatar: "https://i.pravatar.cc/36?img=0.2",
+  },
 ];
 
 const categories = document.querySelectorAll(".category");
@@ -89,7 +120,7 @@ const videoFeed = document.getElementById("video-feed");
 
 videos.forEach((video) => {
   const videoCard = document.createElement("div");
-  videoCard.classList.add("video-card");
+  videoCard.classList.add("card");
 
   videoCard.innerHTML = `
     <img src="${video.thumbnail}" class="thumbnail" />
@@ -105,3 +136,5 @@ videos.forEach((video) => {
 
   videoFeed.appendChild(videoCard);
 });
+
+
